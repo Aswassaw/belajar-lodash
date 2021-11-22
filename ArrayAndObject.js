@@ -312,76 +312,97 @@ const _ = require("lodash");
 //////// 14
 // Sorting
 // Sorting with plain js
-console.log([2, 1, 6, 9, 3, 11, 77, 3, 99, 22].sort((a, b) => a - b));
+// console.log([2, 1, 6, 9, 3, 11, 77, 3, 99, 22].sort((a, b) => a - b));
 // Sorting with lodash
-console.log(_.sortBy([2, 1, 6, 9, 3, 11, 77, 3, 99, 22]));
+// console.log(_.sortBy([2, 1, 6, 9, 3, 11, 77, 3, 99, 22]));
 
 // Sorting array of object
+// let users = [
+//   {
+//     name: "Andry",
+//     react: [
+//       {
+//         angry: 12,
+//         care: 33,
+//         love: 77,
+//         like: 13,
+//       },
+//     ],
+//   },
+//   {
+//     name: "Bagad",
+//     react: [
+//       {
+//         angry: 33,
+//         care: 24,
+//         love: 12,
+//         like: 67,
+//       },
+//     ],
+//   },
+//   {
+//     name: "Badas",
+//     react: [
+//       {
+//         angry: 33,
+//         care: 24,
+//         love: 12,
+//         like: 67,
+//       },
+//     ],
+//   },
+//   {
+//     name: "Adi",
+//     react: [
+//       {
+//         angry: 35,
+//         care: 22,
+//         love: 44,
+//         like: 46,
+//       },
+//     ],
+//   },
+//   {
+//     name: "Allung",
+//     react: [
+//       {
+//         angry: 88,
+//         care: 99,
+//         love: 66,
+//         like: 1,
+//       },
+//     ],
+//   },
+// ];
+// Mengurutkan berdasarkan likes
+// console.log(
+//   _.orderBy(users, [
+//     (user) => {
+//       return user.react[0].care;
+//     },
+//     (user) => {
+//       return user.name;
+//     },
+//   ], ['desc', 'asc'])
+// );
+
+//////// 15
+// Group by
 let users = [
   {
+    id: 1,
     name: "Andry",
-    react: [
-      {
-        angry: 12,
-        care: 33,
-        love: 77,
-        like: 13,
-      },
-    ],
+    isActive: true,
   },
   {
+    id: 2,
     name: "Bagad",
-    react: [
-      {
-        angry: 33,
-        care: 24,
-        love: 12,
-        like: 67,
-      },
-    ],
+    isActive: false,
   },
   {
-    name: "Badas",
-    react: [
-      {
-        angry: 33,
-        care: 24,
-        love: 12,
-        like: 67,
-      },
-    ],
-  },
-  {
+    id: 1,
     name: "Adi",
-    react: [
-      {
-        angry: 35,
-        care: 22,
-        love: 44,
-        like: 46,
-      },
-    ],
-  },
-  {
-    name: "Allung",
-    react: [
-      {
-        angry: 88,
-        care: 99,
-        love: 66,
-        like: 1,
-      },
-    ],
+    isActive: false,
   },
 ];
-// Mengurutkan berdasarkan likes
-console.log(
-  _.orderBy(users, [
-    (user) => {
-      return user.react[0].care;
-    },
-    (user) => {
-      return user.name;
-    },
-  ], ['desc', 'asc'])
-);
+console.log(_.groupBy(users, (user) => user.isActive));
