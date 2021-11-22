@@ -82,16 +82,58 @@ const _ = require("lodash");
 
 //////// 5
 // Menggunakan array of object dan sintaks yang lebih sederhana
+// let users = [
+//   {
+//     id: 1,
+//     name: "Aswassaw",
+//   },
+//   {
+//     id: 2,
+//     name: "Fliger",
+//   },
+// ];
+
+// let usersName = _.map(users, "id");
+// console.log(usersName);
+
+//////// 6
+// Challenge (map)
 let users = [
   {
     id: 1,
-    name: "Aswassaw",
+    first_name: "Andry",
+    status: "active",
   },
   {
     id: 2,
-    name: "Fliger",
+    first_name: "Bagas",
+    status: "inactive",
   },
 ];
 
-let usersName = _.map(users, "id");
-console.log(usersName);
+// Tugas
+// - Mengubah key first_name dari snake_case menjadi camelCase
+// - Mengubah key status menjadi isActive dan nilainya antara true / false, bukan active / inactive
+
+// Normalize with js
+function normalizeUsers(users) {
+  return users.map((user) => {
+    return {
+      id: user.id,
+      firstName: user.first_name,
+      isActive: user.status === "active",
+    };
+  });
+}
+let usersAfterNormalizeWithJS = normalizeUsers(users);
+console.log(usersAfterNormalizeWithJS);
+
+// Normalize using lodash
+let usersAfterNormalizeWithLodash = _.map(users, (user) => {
+  return {
+    id: user.id,
+    firstName: user.first_name,
+    isActive: user.status === "active",
+  };
+});
+console.log(usersAfterNormalizeWithLodash);
