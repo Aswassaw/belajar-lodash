@@ -98,42 +98,61 @@ const _ = require("lodash");
 
 //////// 6
 // Challenge (map)
-let users = [
-  {
-    id: 1,
-    first_name: "Andry",
-    status: "active",
-  },
-  {
-    id: 2,
-    first_name: "Bagas",
-    status: "inactive",
-  },
-];
+// let users = [
+//   {
+//     id: 1,
+//     first_name: "Andry",
+//     status: "active",
+//   },
+//   {
+//     id: 2,
+//     first_name: "Bagas",
+//     status: "inactive",
+//   },
+// ];
 
 // Tugas
 // - Mengubah key first_name dari snake_case menjadi camelCase
 // - Mengubah key status menjadi isActive dan nilainya antara true / false, bukan active / inactive
 
 // Normalize with js
-function normalizeUsers(users) {
-  return users.map((user) => {
-    return {
-      id: user.id,
-      firstName: user.first_name,
-      isActive: user.status === "active",
-    };
-  });
-}
-let usersAfterNormalizeWithJS = normalizeUsers(users);
-console.log(usersAfterNormalizeWithJS);
+// function normalizeUsers(users) {
+//   return users.map((user) => {
+//     return {
+//       id: user.id,
+//       firstName: user.first_name,
+//       isActive: user.status === "active",
+//     };
+//   });
+// }
+// let usersAfterNormalizeWithJS = normalizeUsers(users);
+// console.log(usersAfterNormalizeWithJS);
 
 // Normalize using lodash
-let usersAfterNormalizeWithLodash = _.map(users, (user) => {
-  return {
-    id: user.id,
-    firstName: user.first_name,
-    isActive: user.status === "active",
-  };
-});
-console.log(usersAfterNormalizeWithLodash);
+// let usersAfterNormalizeWithLodash = _.map(users, (user) => {
+//   return {
+//     id: user.id,
+//     firstName: user.first_name,
+//     isActive: user.status === "active",
+//   };
+// });
+// console.log(usersAfterNormalizeWithLodash);
+
+//////// 7
+// Filter with lodash
+console.log(_.filter([1, 2, 3, 4, 5, 6, 7, 8, 9], (item) => item % 2 !== 0)); // Filter angka ganjil
+console.log(_.filter([1, 2, 3, 4, 5, 6, 7, 8, 9], (item) => item % 2 === 0)); // Filter angka ganjil
+
+// Filter object with lodash
+let users = {
+  admin: {
+    name: "Andry",
+  },
+  user: {
+    name: "Bagas",
+  },
+  user: {
+    name: "Adi",
+  }
+};
+console.log(_.filter(users, (user) => user.name.includes("d")));
