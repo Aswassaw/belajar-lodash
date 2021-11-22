@@ -409,10 +409,20 @@ const _ = require("lodash");
 
 //////// 16
 // Chain method (melakukan pemanggilan method lodash secara berantai)
-console.log(
-  _.chain([33, 1, 3, 88, 22, 12, 7])
-    .sortBy()
-    .filter((item) => item % 2 !== 0)
-    .map((item) => item * 2)
-    .value()
-);
+// console.log(
+//   _.chain([33, 1, 3, 88, 22, 12, 7])
+//     .sortBy()
+//     .filter((item) => item % 2 !== 0)
+//     .map((item) => item * 2)
+//     .value()
+// );
+
+//////// 17
+// head (Mendapatkanbagian array pertama)
+console.log(_.head(["Human", 44, true, "Bagad"]));
+// tail (Mendapatkan bagian array selain array pertama)
+console.log(_.tail(["Human", 44, true, "Bagad"]));
+// last (Mendapatkan bagian array terakhir)
+console.log(_.last(["Human", 44, true, "Bagad"]));
+// initial (Mendapatkan bagian array selain array terakhir)
+console.log(_.initial(["Human", 44, true, "Bagad"]));
