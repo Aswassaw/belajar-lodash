@@ -160,28 +160,34 @@ const _ = require("lodash");
 
 //////// 8
 // Challenge (filter)
-let products = [
-  {
-    id: 1,
-    name: "milk",
-    price: 2000,
-  },
-  {
-    id: 2,
-    name: "bread",
-    price: 3000,
-  },
-  {
-    id: 3,
-    name: "meat",
-    price: 8000,
-  },
-];
+// let products = [
+//   {
+//     id: 1,
+//     name: "milk",
+//     price: 2000,
+//   },
+//   {
+//     id: 2,
+//     name: "bread",
+//     price: 3000,
+//   },
+//   {
+//     id: 3,
+//     name: "meat",
+//     price: 8000,
+//   },
+// ];
 
-function searchItem(search) {
-  return _.filter(products, (product) => product.name.includes(search.toLowerCase()));
-}
-console.log(searchItem("A"));
+// function searchItem(search) {
+//   return _.filter(products, (product) => product.name.includes(search.toLowerCase()));
+// }
+// console.log(searchItem("A"));
+
+//////// 9
+// Includes on js native
+console.log([1, 2, 3, 4, 5].includes(4));
+// Includes with lodash
+console.log(_.includes([1, 2, 3, 4, 5], 7));
 
 //////////////// Note
 // - Method map dan filter kembaliannya akan selalu array, tidak peduli nilai awalnya object seperti apapun, kembaliannya akan selalu array.
