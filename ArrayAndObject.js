@@ -191,21 +191,59 @@ const _ = require("lodash");
 
 //////// 10
 // Lodash method (find, findIndex, findLast, findLastIndex)
+// let users = [
+//   {
+//     id: 1,
+//     name: "Andry",
+//   },
+//   {
+//     id: 2,
+//     name: "Bagas",
+//   },
+//   {
+//     id: 3,
+//     name: "Andry",
+//   },
+// ];
+// console.log(_.find(users, (user) => user.name === "Andry"));
+// console.log(_.findIndex(users, (user) => user.name === "Andry"));
+// console.log(_.findLast(users, (user) => user.name === "Andry"));
+// console.log(_.findLastIndex(users, (user) => user.name === "Andry"));
+
+//////// 11
+// Removing item from array with lodash
+let initialArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(_.without(initialArr, 1, 4, 9)); // Tidak mengubah array bawaan
+
 let users = [
   {
     id: 1,
     name: "Andry",
+    isActive: true,
   },
   {
     id: 2,
-    name: "Bagas",
+    name: "Bagad",
+    isActive: false,
   },
   {
     id: 3,
-    name: "Andry",
+    name: "Adi",
+    isActive: true,
   },
 ];
-console.log(_.find(users, (user) => user.name === "Andry"));
-console.log(_.findIndex(users, (user) => user.name === "Andry"));
-console.log(_.findLast(users, (user) => user.name === "Andry"));
-console.log(_.findLastIndex(users, (user) => user.name === "Andry"));
+// Reject (menghapus item dari array)(tidak mengubah array bawaan)
+console.log(
+  // Mengembalikan array users hanya yang id !== 2
+  _.reject(users, (user) => {
+    return user.id === 2;
+  })
+);
+//
+// Remove (menghapus item dari array)(mengubah array bawaan)
+console.log(
+  // Mengembalikan array users hanya yang isActive !== true
+  _.remove(users, (user) => {
+    return !user.isActive;
+  })
+);
