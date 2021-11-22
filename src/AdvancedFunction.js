@@ -10,6 +10,21 @@ const _ = require("lodash");
 
 //////// 2
 // Generate unique id
-console.log(_.uniqueId()); // 1
-console.log(_.uniqueId()); // 2
-console.log(_.uniqueId()); // 3
+// console.log(_.uniqueId()); // 1
+// console.log(_.uniqueId('user_')); // 2
+// console.log(_.uniqueId('post_')); // 3
+
+//////// 3
+// Flatten (mengubah array multidimensi menjadi hanya 1 dimensi)
+console.log(
+  _.flatten([
+    [1, 2, 3],
+    [4, 5, 6],
+  ])
+);
+console.log(
+  _.flattenDeep([
+    [1, 2, 3],
+    [4, 5, [6, 7, [9, 10, [11, 12, 13]]]],
+  ])
+);
