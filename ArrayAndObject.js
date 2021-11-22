@@ -140,19 +140,48 @@ const _ = require("lodash");
 
 //////// 7
 // Filter with lodash
-console.log(_.filter([1, 2, 3, 4, 5, 6, 7, 8, 9], (item) => item % 2 !== 0)); // Filter angka ganjil
-console.log(_.filter([1, 2, 3, 4, 5, 6, 7, 8, 9], (item) => item % 2 === 0)); // Filter angka ganjil
+// console.log(_.filter([1, 2, 3, 4, 5, 6, 7, 8, 9], (item) => item % 2 !== 0)); // Filter angka ganjil
+// console.log(_.filter([1, 2, 3, 4, 5, 6, 7, 8, 9], (item) => item % 2 === 0)); // Filter angka ganjil
 
 // Filter object with lodash
-let users = {
-  admin: {
-    name: "Andry",
+// let users = {
+//   admin: {
+//     name: "Andry",
+//   },
+//   user: {
+//     name: "Bagas",
+//   },
+//   user: {
+//     name: "Adi",
+//   },
+// };
+// console.log(_.filter(users, { name: "Andry" }));
+// console.log(_.filter(users, (user) => user.name.includes("d")));
+
+//////// 8
+// Challenge (filter)
+let products = [
+  {
+    id: 1,
+    name: "milk",
+    price: 2000,
   },
-  user: {
-    name: "Bagas",
+  {
+    id: 2,
+    name: "bread",
+    price: 3000,
   },
-  user: {
-    name: "Adi",
-  }
-};
-console.log(_.filter(users, (user) => user.name.includes("d")));
+  {
+    id: 3,
+    name: "meat",
+    price: 8000,
+  },
+];
+
+function searchItem(search) {
+  return _.filter(products, (product) => product.name.includes(search.toLowerCase()));
+}
+console.log(searchItem("A"));
+
+//////////////// Note
+// - Method map dan filter kembaliannya akan selalu array, tidak peduli nilai awalnya object seperti apapun, kembaliannya akan selalu array.
