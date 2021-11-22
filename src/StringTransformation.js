@@ -17,10 +17,14 @@ const _ = require("lodash");
 
 //////// 3
 // Challenge (converting string to slug)
-function convertStringToSlug(str) {
-  let slug = _.chain(str).toLower().split(" ").join("-").value();
-  return encodeURI(slug);
-}
-console.log(convertStringToSlug("Kota Trenggalek sangat indah"));
-console.log(convertStringToSlug("Soal CPNS ini akan membuatmu sakit kepala"));
-console.log(convertStringToSlug("Aldino Alung Putra Anugraha"));
+// function convertStringToSlug(str) {
+//   let slug = _.chain(str).toLower().split(" ").join("-").value();
+//   return encodeURI(slug);
+// }
+// console.log(convertStringToSlug("Kota Trenggalek sangat indah"));
+// console.log(convertStringToSlug("Soal CPNS ini akan membuatmu sakit kepala"));
+// console.log(convertStringToSlug("Aldino Alung Putra Anugraha"));
+
+//////// 4
+// Capitalize string
+console.log(_.capitalize("bagas adalah jelmaan makhluk yang sangat hebat"));
