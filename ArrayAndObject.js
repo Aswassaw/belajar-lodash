@@ -280,31 +280,92 @@ const _ = require("lodash");
 
 //////// 13
 // Every and some
+// let users = [
+//   {
+//     id: 1,
+//     name: "Andry",
+//     isActive: true,
+//     likes: 100,
+//   },
+//   {
+//     id: 2,
+//     name: "Bagad",
+//     isActive: false,
+//     likes: 34,
+//   },
+//   {
+//     id: 1,
+//     name: "Adi",
+//     isActive: false,
+//     likes: 991,
+//   },
+// ];
+// // Every (akan mengembalikan true jika semua isActive bernilai true)
+// console.log(
+//   _.every(users, (user) => {
+//     return user.isActive;
+//   })
+// );
+// // Some (akan mengembalikan true jika ada salah satu isActive yang bernilai)
+// console.log(_.some(users, (user) => user.isActive));
+
+//////// 14
+// Sorting
+// Sorting with plain js
+console.log([2, 1, 6, 9, 3, 11, 77, 3, 99, 22].sort((a, b) => a - b));
+// Sorting with lodash
+console.log(_.sortBy([2, 1, 6, 9, 3, 11, 77, 3, 99, 22]));
+
+// Sorting array of object
 let users = [
   {
-    id: 1,
     name: "Andry",
-    isActive: true,
-    likes: 100,
+    react: [
+      {
+        angry: 12,
+        care: 33,
+        love: 77,
+        like: 13,
+      },
+    ],
   },
   {
-    id: 2,
     name: "Bagad",
-    isActive: false,
-    likes: 34,
+    react: [
+      {
+        angry: 33,
+        care: 24,
+        love: 12,
+        like: 67,
+      },
+    ],
   },
   {
-    id: 1,
     name: "Adi",
-    isActive: false,
-    likes: 991,
+    react: [
+      {
+        angry: 35,
+        care: 22,
+        love: 44,
+        like: 46,
+      },
+    ],
+  },
+  {
+    name: "Allung",
+    react: [
+      {
+        angry: 88,
+        care: 99,
+        love: 66,
+        like: 1,
+      },
+    ],
   },
 ];
-// Every (akan mengembalikan true jika semua isActive bernilai true)
+// Mengurutkan berdasarkan likes
 console.log(
-  _.every(users, (user) => {
-    return user.isActive;
+  _.sortBy(users, (user) => {
+    return user.react[0].care;
   })
 );
-// Some (akan mengembalikan true jika ada salah satu isActive yang bernilai)
-console.log(_.some(users, (user) => user.isActive));
