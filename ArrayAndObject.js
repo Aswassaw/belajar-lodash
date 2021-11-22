@@ -388,21 +388,31 @@ const _ = require("lodash");
 
 //////// 15
 // Group by
-let users = [
-  {
-    id: 1,
-    name: "Andry",
-    isActive: true,
-  },
-  {
-    id: 2,
-    name: "Bagad",
-    isActive: false,
-  },
-  {
-    id: 1,
-    name: "Adi",
-    isActive: false,
-  },
-];
-console.log(_.groupBy(users, (user) => user.isActive));
+// let users = [
+//   {
+//     id: 1,
+//     name: "Andry",
+//     isActive: true,
+//   },
+//   {
+//     id: 2,
+//     name: "Bagad",
+//     isActive: false,
+//   },
+//   {
+//     id: 1,
+//     name: "Adi",
+//     isActive: false,
+//   },
+// ];
+// console.log(_.groupBy(users, (user) => user.isActive));
+
+//////// 16
+// Chain method (melakukan pemanggilan method lodash secara berantai)
+console.log(
+  _.chain([33, 1, 3, 88, 22, 12, 7])
+    .sortBy()
+    .filter((item) => item % 2 !== 0)
+    .map((item) => item * 2)
+    .value()
+);
