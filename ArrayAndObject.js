@@ -185,9 +185,27 @@ const _ = require("lodash");
 
 //////// 9
 // Includes on js native
-console.log([1, 2, 3, 4, 5].includes(4));
+// console.log([1, 2, 3, 4, 5].includes(4));
 // Includes with lodash
-console.log(_.includes([1, 2, 3, 4, 5], 7));
+// console.log(_.includes([1, 2, 3, 4, 5], 7));
 
-//////////////// Note
-// - Method map dan filter kembaliannya akan selalu array, tidak peduli nilai awalnya object seperti apapun, kembaliannya akan selalu array.
+//////// 10
+// Lodash method (find, findIndex, findLast, findLastIndex)
+let users = [
+  {
+    id: 1,
+    name: "Andry",
+  },
+  {
+    id: 2,
+    name: "Bagas",
+  },
+  {
+    id: 3,
+    name: "Andry",
+  },
+];
+console.log(_.find(users, (user) => user.name === "Andry"));
+console.log(_.findIndex(users, (user) => user.name === "Andry"));
+console.log(_.findLast(users, (user) => user.name === "Andry"));
+console.log(_.findLastIndex(users, (user) => user.name === "Andry"));
