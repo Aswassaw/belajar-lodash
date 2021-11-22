@@ -418,11 +418,21 @@ const _ = require("lodash");
 // );
 
 //////// 17
-// head (Mendapatkanbagian array pertama)
-console.log(_.head(["Human", 44, true, "Bagad"]));
-// tail (Mendapatkan bagian array selain array pertama)
-console.log(_.tail(["Human", 44, true, "Bagad"]));
-// last (Mendapatkan bagian array terakhir)
-console.log(_.last(["Human", 44, true, "Bagad"]));
-// initial (Mendapatkan bagian array selain array terakhir)
-console.log(_.initial(["Human", 44, true, "Bagad"]));
+// // head (Mendapatkanbagian array pertama)
+// console.log(_.head(["Human", 44, true, "Bagad"]));
+// // tail (Mendapatkan bagian array selain array pertama)
+// console.log(_.tail(["Human", 44, true, "Bagad"]));
+// // last (Mendapatkan bagian array terakhir)
+// console.log(_.last(["Human", 44, true, "Bagad"]));
+// // initial (Mendapatkan bagian array selain array terakhir)
+// console.log(_.initial(["Human", 44, true, "Bagad"]));
+
+//////// 18
+// Shuffle method
+console.log(_.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// Shuffle method for string
+console.log(_.shuffle("MAnusia"));
+
+//////////////// Note:
+// - Method lodash (map dan filter) akan tetap mengembalikan array bahkan jika initial valuenya adalah obejct.
+// - Semua lodash method yang berfungsi pada array juga akan berfungsi jika digunakan pada string.
