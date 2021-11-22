@@ -250,6 +250,36 @@ const _ = require("lodash");
 
 //////// 12
 // Chanllenge (reject)
+// let users = [
+//   {
+//     id: 1,
+//     name: "Andry",
+//     isActive: true,
+//     likes: 100,
+//   },
+//   {
+//     id: 2,
+//     name: "Bagad",
+//     isActive: false,
+//     likes: 34,
+//   },
+//   {
+//     id: 1,
+//     name: "Adi",
+//     isActive: false,
+//     likes: 991,
+//   },
+// ];
+// function getPopularUsers(users){
+//   // Mengembalikan users dengan likes lebih besar 100 dan isActive true
+//   return _.reject(users, (user) => {
+//     return !user.isActive || user.likes < 100;
+//   })
+// }
+// console.log(getPopularUsers(users));
+
+//////// 13
+// Every and some
 let users = [
   {
     id: 1,
@@ -270,10 +300,11 @@ let users = [
     likes: 991,
   },
 ];
-function getPopularUsers(users){
-  // Mengembalikan users dengan likes lebih besar 100 dan isActive true
-  return _.reject(users, (user) => {
-    return !user.isActive || user.likes < 100;
+// Every (akan mengembalikan true jika semua isActive bernilai true)
+console.log(
+  _.every(users, (user) => {
+    return user.isActive;
   })
-}
-console.log(getPopularUsers(users));
+);
+// Some (akan mengembalikan true jika ada salah satu isActive yang bernilai)
+console.log(_.some(users, (user) => user.isActive));
