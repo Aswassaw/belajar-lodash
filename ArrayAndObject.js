@@ -212,38 +212,68 @@ const _ = require("lodash");
 
 //////// 11
 // Removing item from array with lodash
-let initialArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(_.without(initialArr, 1, 4, 9)); // Tidak mengubah array bawaan
+// let initialArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(_.without(initialArr, 1, 4, 9)); // Tidak mengubah array bawaan
 
+// let users = [
+//   {
+//     id: 1,
+//     name: "Andry",
+//     isActive: true,
+//   },
+//   {
+//     id: 2,
+//     name: "Bagad",
+//     isActive: false,
+//   },
+//   {
+//     id: 3,
+//     name: "Adi",
+//     isActive: true,
+//   },
+// ];
+// // Reject (menghapus item dari array)(tidak mengubah array bawaan)
+// console.log(
+//   // Mengembalikan array users hanya yang id !== 2
+//   _.reject(users, (user) => {
+//     return user.id === 2;
+//   })
+// );
+// //
+// // Remove (menghapus item dari array)(mengubah array bawaan)
+// console.log(
+//   // Mengembalikan array users hanya yang isActive !== true
+//   _.remove(users, (user) => {
+//     return !user.isActive;
+//   })
+// );
+
+//////// 12
+// Chanllenge (reject)
 let users = [
   {
     id: 1,
     name: "Andry",
     isActive: true,
+    likes: 100,
   },
   {
     id: 2,
     name: "Bagad",
     isActive: false,
+    likes: 34,
   },
   {
-    id: 3,
+    id: 1,
     name: "Adi",
-    isActive: true,
+    isActive: false,
+    likes: 991,
   },
 ];
-// Reject (menghapus item dari array)(tidak mengubah array bawaan)
-console.log(
-  // Mengembalikan array users hanya yang id !== 2
-  _.reject(users, (user) => {
-    return user.id === 2;
+function getPopularUsers(users){
+  // Mengembalikan users dengan likes lebih besar 100 dan isActive true
+  return _.reject(users, (user) => {
+    return !user.isActive || user.likes < 100;
   })
-);
-//
-// Remove (menghapus item dari array)(mengubah array bawaan)
-console.log(
-  // Mengembalikan array users hanya yang isActive !== true
-  _.remove(users, (user) => {
-    return !user.isActive;
-  })
-);
+}
+console.log(getPopularUsers(users));
