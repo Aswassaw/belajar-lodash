@@ -27,4 +27,11 @@ const _ = require("lodash");
 
 //////// 4
 // Capitalize string
-console.log(_.capitalize("bagas adalah jelmaan makhluk yang sangat hebat"));
+// console.log(_.capitalize("bagas adalah jelmaan makhluk yang sangat hebat"));
+
+//////// 5
+// Convert string to camelCase and snake_case
+console.log(_.camelCase("Manusia tidak berdaya."));
+console.log(_.snakeCase("Manusia tidak berdaya."));
+console.log(_.kebabCase("Manusia tidak berdaya."));
+console.log(_.startCase("Manusia tidak berdaya.")); // Membuat kapital setiap huruf pertama kata
