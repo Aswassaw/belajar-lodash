@@ -341,6 +341,17 @@ let users = [
     ],
   },
   {
+    name: "Badas",
+    react: [
+      {
+        angry: 33,
+        care: 24,
+        love: 12,
+        like: 67,
+      },
+    ],
+  },
+  {
     name: "Adi",
     react: [
       {
@@ -365,7 +376,12 @@ let users = [
 ];
 // Mengurutkan berdasarkan likes
 console.log(
-  _.sortBy(users, (user) => {
-    return user.react[0].care;
-  })
+  _.orderBy(users, [
+    (user) => {
+      return user.react[0].care;
+    },
+    (user) => {
+      return user.name;
+    },
+  ], ['desc', 'asc'])
 );
