@@ -54,16 +54,31 @@ const _ = require("lodash");
 
 //////// 5
 // Clone (membuat clone, mencegah bug reference)
-let baseConfig = {
-  apiUrl: "andry.com",
-  port: 3000,
-};
-// Membuat clone di plain js
-let nativeClone = { ...baseConfig };
-nativeClone.apiUrl = 'bagas.com'
-// Membuat clone di lodash
-let lodashClone = _.clone(baseConfig);
-lodashClone.port = 4000;
-console.log(baseConfig);
-console.log(nativeClone);
-console.log(lodashClone);
+// let baseConfig = {
+//   apiUrl: "andry.com",
+//   port: 3000,
+// };
+// // Membuat clone di plain js
+// let nativeClone = { ...baseConfig };
+// nativeClone.apiUrl = 'bagas.com'
+// // Membuat clone di lodash
+// let lodashClone = _.clone(baseConfig);
+// lodashClone.port = 4000;
+// console.log(baseConfig);
+// console.log(nativeClone);
+// console.log(lodashClone);
+
+//////// 6
+// Cheking type in lodash
+console.log(_.isString("Manusia")); // True jika string
+console.log(_.isNumber(5)); // True jika number
+console.log(_.isBoolean(true)); // True jika boolean
+console.log(_.isNaN(NaN)); // True jika NaN
+console.log(_.isEmpty("")); // True jika kosong
+console.log(_.isObject({})); // True jika object
+console.log(_.isArray({})); // True jika array
+console.log(_.isEqual(1, "1")); // 1 number sama dengan 1 string
+console.log(_.isEqual({ 1: "A" }, { 1: "A" })); // Membandingkan 2 buah object (ini mustahil di plain js, tapi lodash bisa)
+console.log(_.isNull(null)); // True jika null
+console.log(_.isUndefined(undefined)); // True jika undefined
+console.log(_.isNil(undefined)); // True jika null / undefined
