@@ -31,23 +31,39 @@ const _ = require("lodash");
 
 //////// 4
 // Compact (menghilangkan nilai falsy dari array)
-let arr = [1, 2, null, 3, undefined, 0, false, ""];
-console.log(_.compact(arr));
+// let arr = [1, 2, null, 3, undefined, 0, false, ""];
+// console.log(_.compact(arr));
 
-let user = [
-  {
-    id: 1,
-    name: "Andry",
-  },
-  null,
-  {
-    id: 2,
-    name: "Bagas",
-  },
-  undefined,
-  {
-    id: 3,
-    name: "Adi",
-  },
-];
-console.log(_.compact(user));
+// let user = [
+//   {
+//     id: 1,
+//     name: "Andry",
+//   },
+//   null,
+//   {
+//     id: 2,
+//     name: "Bagas",
+//   },
+//   undefined,
+//   {
+//     id: 3,
+//     name: "Adi",
+//   },
+// ];
+// console.log(_.compact(user));
+
+//////// 5
+// Clone (membuat clone, mencegah bug reference)
+let baseConfig = {
+  apiUrl: "andry.com",
+  port: 3000,
+};
+// Membuat clone di plain js
+let nativeClone = { ...baseConfig };
+nativeClone.apiUrl = 'bagas.com'
+// Membuat clone di lodash
+let lodashClone = _.clone(baseConfig);
+lodashClone.port = 4000;
+console.log(baseConfig);
+console.log(nativeClone);
+console.log(lodashClone);
